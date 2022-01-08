@@ -1,0 +1,98 @@
+<div class="bootstrap-wrapper">
+    <div class="row mt20">
+        <div class="col-md-10">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-subtitle>
+                        <h2>Add Questions to <span style="font-weight: bold">{{qTitle}}</span></h2>
+                    </mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <form class="mt20" (submit)="formSubmit()">
+                        <ckeditor [editor]="Editor" [(ngModel)]="question.content" name="content" data="<h1>Write Question here...</h1>"></ckeditor>
+                        <!-- <mat-form-field class="w100"> -->
+
+                            
+                            <!-- <mat-label>Question..</mat-label>
+                            <textarea rows="5" 
+                            [(ngModel)]="question.content"
+                            name="content"
+                            required
+                            matInput placeholder="Enter your question here"></textarea> -->
+                        <!-- </mat-form-field> -->
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- option1 -->
+                                <mat-form-field class="w100">
+                                    <mat-label>Option 1</mat-label>
+                                    <input type="text" 
+                                    [(ngModel)]="question.option1"
+                                    name="option1"
+                                    required
+                                    matInput />
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- option2 -->
+                                <mat-form-field class="w100">
+                                    <mat-label>Option 2</mat-label>
+                                    <input type="text"
+                                    [(ngModel)]="question.option2"
+                                    name="option2"
+                                    required
+                                    matInput />
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- option3 -->
+                                <mat-form-field class="w100">
+                                    <mat-label>Option 3</mat-label>
+                                    <input type="text" 
+                                    [(ngModel)]="question.option3"
+                                    name="option3"
+                                    matInput />
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- option4 -->
+                                <mat-form-field class="w100">
+                                    <mat-label>Option 4</mat-label>
+                                    <input type="text" 
+                                    [(ngModel)]="question.option4"
+                                    name="option4"
+                                    matInput />
+                                </mat-form-field>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <!-- answer -->
+                                <mat-form-field class="w100">
+                                    <mat-label>Select Answer</mat-label>
+                                    <mat-select [(ngModel)]="question.answer" name="answer">
+                                        <mat-option *ngIf="question.option1" [value]="question.option1">{{question.option1}}</mat-option>
+                                        <mat-option *ngIf="question.option2" [value]="question.option2">{{question.option2}}</mat-option>
+                                        <mat-option *ngIf="question.option3" [value]="question.option3">{{question.option3}}</mat-option>
+                                        <mat-option *ngIf="question.option4" [value]="question.option4">{{question.option4}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="container text-center">
+                                <button mat-raised-button color="primary" >
+                                    <mat-icon>add</mat-icon>
+                                    <span>Add Question</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

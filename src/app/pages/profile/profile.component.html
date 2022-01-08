@@ -1,0 +1,53 @@
+<mat-card *ngIf="user">
+    <h1><u>Your Profile Details</u></h1>
+    <!-- {{user | json}} -->
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+
+                    <img src="https://media.istockphoto.com/vectors/default-avatar-profile-icon-grey-photo-placeholder-vector-id846183008?k=20&m=846183008&s=612x612&w=0&h=DEeEmqerpIzVAJwJvdWcPS6bPoeGef8RBmoI-p1w45g="
+                    class="profile-image"
+                    />
+
+                    <h1 class="mt20"><strong>{{login.getUser().firstname}} {{login.getUser().lastname}}</strong></h1> 
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                            <!-- Table Details -->
+                            <table class="table text-center">
+                            <tr>
+                                <td><i>Username:</i></td>
+                                <td><strong>{{login.getUser().username}}</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td><i>User-Id:</i></td>
+                                <td><strong>EP-{{login.getUser().id}}</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td><i>Phone:</i></td>
+                                <td><strong>{{login.getUser().phone}}</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td><i>Role:</i></td>
+                                <td><strong>{{login.getUser().authorities[0].authority}}</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td><i>Status:</i></td>
+                                <td><strong>{{login.getUser().enabled?"ACTIVE":"NOT-ACTIVE"}}</strong></td>
+                            </tr>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-card-actions >
+            <button mat-raised-button color="primary">UPDATE</button>
+            <button mat-raised-button color="warn">SHARE</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
