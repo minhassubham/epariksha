@@ -56,5 +56,16 @@ export class SignupComponent implements OnInit {
 
   // this.user
 
+  public clear(){
+    this.user={
+      username:'',
+      password:'',
+      email:'',
+      phone:'',
+      firstname:'',
+      lastname:'',
+    }
+  }
+
 
 }
