@@ -83,4 +83,10 @@ export class LoginComponent implements OnInit {
 
   }
 
+  public reset(){
+    this.loginData={
+      username: '',
+      password: '',
+    }
+  }
 }
